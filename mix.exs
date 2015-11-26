@@ -26,6 +26,6 @@ defmodule Mandrag.Mixfile do
     [files: ["lib", "mix.exs", "README*", "LICENSE*"],
      maintainers: ["Curtis Schiewek"],
      licenses: ["MIT"],
-     links: %{"GitHub" => "https://github.com/cschiewek/mandrag"]
+     links: %{"GitHub" => "https://github.com/cschiewek/mandrag"}]
   end
 end
