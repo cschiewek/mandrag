@@ -1,0 +1,2 @@
+defmodule Mandrag do
+end
