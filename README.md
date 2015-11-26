@@ -16,7 +16,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
   2. Add config info to appropriate mix config, most likely prod:
 
-  ``elixir
+  ```elixir
   config :mandrag,
     build_location: :remote # where to build/compile the app, :remote to build on the remote host, :local to build locally
     host: "host.com", # the host you're deploying to
