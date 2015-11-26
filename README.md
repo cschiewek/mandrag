@@ -1,6 +1,6 @@
 # Mandrag
 
-A simple, extremely assumptive deploy script for Phoenix apps, using exrm.
+A simple, extremely assumptive deploy script for [Phoenix](https://phoenixframework.org) apps, with help from [exrm](https://exrm.readme.io/).
 
 ## Installation
 
