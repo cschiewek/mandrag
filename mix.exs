@@ -5,8 +5,8 @@ defmodule Mandrag.Mixfile do
     [app: :mandrag,
      version: "0.0.1",
      elixir: "~> 1.1",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
+     description: "A simple, extremely assumptive deploy script for Phoenix apps",
+     package: package,
      deps: deps]
   end
 
@@ -18,15 +18,14 @@ defmodule Mandrag.Mixfile do
   end
 
   # Dependencies can be Hex packages:
-  #
-  #   {:mydep, "~> 0.3.0"}
-  #
-  # Or git/path repositories:
-  #
-  #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1.0"}
-  #
-  # Type "mix help deps" for more examples and options
   defp deps do
     [{:exrm, "~> 1.0.0-rc5"}]
+  end
+
+  defp package do
+    [files: ["lib", "mix.exs", "README*", "LICENSE*"],
+     maintainers: ["Curtis Schiewek"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/cschiewek/mandrag"]
   end
 end
