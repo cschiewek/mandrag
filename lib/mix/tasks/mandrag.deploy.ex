@@ -24,13 +24,13 @@ defmodule Mix.Tasks.Mandrag do
     defp _prepare(:remote) do
       ssh "git clone #{repo} #{name}"
       ssh "mkdir #{name}/priv/static"
-      ssh "cd #{name} && MIX_ENV=#{Mix.env} mix deps.get"
       ssh "cd #{name} && npm install"
       ssh "cd #{name} && node_modules/bower/bin/bower install -p"
     end
 
     defp _build(:local) do
       scp "config/prod.secret.exs", "#{name}/config/prod.secret.exs"
+      Mix.Task.run "deps.get"
       Mix.Task.run "compile"
       Mix.Shell.IO.cmd "brunch build"
       Mix.Task.run "phoenix.digest", []
@@ -40,6 +40,7 @@ defmodule Mix.Tasks.Mandrag do
     defp _build(:remote) do
       ssh "cd #{name} && git pull"
       scp "config/prod.secret.exs", "#{name}/config/prod.secret.exs"
+      ssh "cd #{name} && MIX_ENV=#{Mix.env} mix deps.get"
       ssh "cd #{name} && MIX_ENV=#{Mix.env} mix compile"
       ssh "cd #{name} && node_modules/brunch/bin/brunch build"
       ssh "cd #{name} && MIX_ENV=#{Mix.env} mix phoenix.digest"
