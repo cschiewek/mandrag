@@ -12,4 +12,8 @@ defmodule MandragTest do
   test "current" do
     assert Mandrag.current == "mandrag:#{Mix.Project.config[:version]}"
   end
+
+  test "pod" do
+    assert Mandrag.pod == nil
+  end
 end
