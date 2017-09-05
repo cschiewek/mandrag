@@ -7,11 +7,9 @@ defmodule Mandrag do
 
   defp name, do: Mix.Project.config[:app] |> Atom.to_string
 
-  defp exec(command, args), do: System.cmd(command, args, into: IO.stream(:stdio, :line))
+  def docker(args), do: Mix.Shell.IO.cmd("docker " <> args)
 
-  def docker(args), do: exec("docker", args)
-
-  def kubectl(args), do: exec("kubectl", args)
+  def kubectl(args), do: Mix.Shell.IO.cmd("kutectl " <> args)
 
   def latest, do: "#{image()}:latest"
 

@@ -1,8 +1,9 @@
 defmodule Mix.Tasks.Mandrag.Build do
   use Mix.Task
+  import Mandrag, only: [docker: 1, current: 0]
   @shortdoc "Builds docker image that contains a release"
 
-  # def run(_) do
-  #   docker ["build", "-t", current(), "."]
-  # end
+  def run(_) do
+    docker "build -t #{current()} ."
+  end
 end
