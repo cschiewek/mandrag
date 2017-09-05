@@ -23,7 +23,8 @@ defmodule Mandrag.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:distillery, "~> 1.5.1"}
+      {:distillery, "~> 1.5.1"},
+      {:ex_doc, "~> 0.16.3", only: :dev}
     ]
   end
 
