@@ -8,7 +8,8 @@ defmodule Mandrag.Mixfile do
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
       description: "Deploy Elixir releases to Kubernetes",
-      deps: deps()
+      deps: deps(),
+      package: package()
     ]
   end
 
@@ -24,5 +25,11 @@ defmodule Mandrag.Mixfile do
     [
       {:distillery, "~> 1.5.1"}
     ]
+  end
+
+  defp package do
+    [maintainers: ["Curtis Schiewek"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/cschiewek/mandrag"}]
   end
 end
