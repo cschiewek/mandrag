@@ -6,4 +6,4 @@ defmodule Mix.Tasks.Mandrag.Migrate do
   def run(_) do
     kubectl "exec #{pod()} bin/#{name()} rpc Mandrag migrate"
   end
- end
+end

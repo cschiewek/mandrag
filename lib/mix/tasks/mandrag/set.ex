@@ -4,8 +4,6 @@ defmodule Mix.Tasks.Mandrag.Set do
   @shortdoc "Sets the image"
 
   def run(_) do
-    command = "set image deployment/#{name()} #{name()}=#{current()}"
-    IO.puts "kubectl #{command}"
-    kubectl command
+    kubectl "set image deployment/#{name()} #{name()}=#{current()}"
   end
- end
+end
