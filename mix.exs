@@ -24,6 +24,7 @@ defmodule Mandrag.Mixfile do
   defp deps do
     [
       {:distillery, "~> 1.5.1"},
+      {:ecto, ">= 0.0.0", optional: true},
       {:ex_doc, "~> 0.16.3", only: :dev}
     ]
   end
