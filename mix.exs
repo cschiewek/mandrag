@@ -4,13 +4,12 @@ defmodule Mandrag.Mixfile do
   def project do
     [
       app: :mandrag,
-      version: "0.2.3",
+      version: "0.2.4",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
-      description: "Deploy Elixir releases to Kubernetes",
+      description: "Build and Deploy Elixir releases to Kubernetes",
       deps: deps(),
-      package: package(),
-      aliases: aliases()
+      package: package()
     ]
   end
 
@@ -34,10 +33,5 @@ defmodule Mandrag.Mixfile do
     [maintainers: ["Curtis Schiewek"],
      licenses: ["MIT"],
      links: %{"GitHub" => "https://github.com/cschiewek/mandrag"}]
-  end
-
-  defp aliases do
-    ["mandrag.deploy": ~w(mandrag.build mandrag.push mandrag.set),
-     "mandrag.deploy_and_migrate": ~w(mandrag.deploy mandrag.migrate)]
   end
 end
