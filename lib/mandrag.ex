@@ -5,7 +5,9 @@ defmodule Mandrag do
 
   def image, do: Application.get_env(:mandrag, :image) || name()
 
-  def name, do: Mix.Project.config[:app] |> Atom.to_string
+  def app, do:  Application.get_env(:mandrag, :app)
+
+  def name, do: app() |> Atom.to_string
 
   def docker(args), do: Mix.Shell.IO.cmd("docker " <> args)
 
@@ -22,9 +24,8 @@ defmodule Mandrag do
 
   def migrate do
     if function_exported?(Ecto.Migrator, :run, 4) do
-      app = Mix.Project.config[:app]
-      {:ok, _} = Application.ensure_all_started(app)
-      path = Application.app_dir(app, "priv/repo/migrations")
+      {:ok, _} = Application.ensure_all_started(app())
+      path = Application.app_dir(app(), "priv/repo/migrations")
       Ecto.Migrator.run(repo(), path, :up, all: true)
     end
   end

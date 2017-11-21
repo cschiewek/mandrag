@@ -14,9 +14,14 @@ by adding `mandrag` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:mandrag, "~> 0.2.0"}
+    {:mandrag, "~> 0.3.0"}
   ]
 end
+```
+
+## Configure
+```elixir
+config :mandrag, app: :app_name
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
