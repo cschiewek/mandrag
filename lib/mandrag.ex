@@ -36,6 +36,8 @@ defmodule Mandrag do
   defp pod_name(pod_line), do: pod_line |> String.split(" ") |> Enum.at(0)
 
   defp repo do
-    Application.get_env(:mandrag, :repo) || "#{name() |> String.capitalize}.Repo"
+    case Application.get_env(:mandrag, :repo)
+      nil -> "#{name() |> String.capitalize}.Repo" |> String.to_existing_atom
+      repo -> repo
   end
 end
