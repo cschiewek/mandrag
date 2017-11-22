@@ -21,7 +21,12 @@ end
 
 ## Configure
 ```elixir
-config :mandrag, app: :app_name
+config :mandrag,
+  app: :app_name,
+  # If you want to migrate, you need to specify a repo as well
+  repo: App.Repo,
+  # You can also specify a docker image, it defaults to the value speficied in :app
+  image: docker/app_name
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
