@@ -4,6 +4,6 @@ defmodule Mix.Tasks.Mandrag.Migrate do
   @shortdoc "Runs the migrations"
 
   def run(_) do
-    kubectl "exec #{pod()} bin/#{name()} rpc Mandrag migrate"
+    kubectl "exec #{pod()} bin/#{name()} rpc Elixir.Mandrag migrate"
   end
 end
