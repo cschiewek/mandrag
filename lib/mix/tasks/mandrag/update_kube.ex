@@ -4,7 +4,7 @@ defmodule Mix.Tasks.Mandrag.Set do
   @shortdoc "Sets the image"
 
   def run(_) do
-    if File.exists?(kube_config()), do: kubectl "apply -f #{kubconfig}"
+    if File.exists?(kube_config()), do: kubectl "apply -f #{kube_config()}"
     kubectl "set image deployment/#{name()} #{name()}=#{current()}"
   end
 end
