@@ -24,7 +24,7 @@ end
 config :mandrag,
   # The name of your app.  Required.
   app: :app_name,
-  # If you want to migrate, you need to specify a repo as well
+  # If you want to migrate, you need to specify a repo as well.
   repo: App.Repo,
   # You can also specify a docker image, it defaults to the value speficied in :app
   image: docker/app_name,
