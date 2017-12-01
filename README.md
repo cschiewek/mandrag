@@ -14,7 +14,7 @@ by adding `mandrag` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:mandrag, "~> 0.3.0"}
+    {:mandrag, "~> 0.4.0"}
   ]
 end
 ```
@@ -22,11 +22,13 @@ end
 ## Configure
 ```elixir
 config :mandrag,
+  # The name of your app.  Required.
   app: :app_name,
   # If you want to migrate, you need to specify a repo as well
   repo: App.Repo,
   # You can also specify a docker image, it defaults to the value speficied in :app
-  image: docker/app_name
+  image: docker/app_name,
+  # You can specify a kube config that's applied on deploy, it default's to `kubernetes.yml`
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)

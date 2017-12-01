@@ -3,11 +3,13 @@ defmodule Mandrag do
   Documentation for Mandrag.
   """
 
-  def image, do: Application.get_env(:mandrag, :image) || name()
+  def image, do: Application.get_env(:mandrag, :image, name())
 
   def app, do: Application.get_env(:mandrag, :app)
 
   defp repo, do: Application.get_env(:mandrag, :repo)
+
+  def kube_config, do: Application.get_env(:mandrag, :kube_config, "kubernetes.yml")
 
   def name, do: app() |> Atom.to_string
 
