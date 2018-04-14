@@ -4,7 +4,7 @@ defmodule Mix.Tasks.Mandrag.Push do
   @shortdoc "Pushes docker images"
 
   def run(_) do
-    docker "push #{current()}"
-    docker "push #{latest()}"
+    docker("push #{current()}")
+    docker("push #{latest()}")
   end
 end

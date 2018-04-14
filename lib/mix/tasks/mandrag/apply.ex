@@ -4,6 +4,6 @@ defmodule Mix.Tasks.Mandrag.Apply do
   @shortdoc "Runs helm upgrade/install"
 
   def run(_) do
-    Mix.Shell.IO.cmd "helm upgrade --install --set image.tag=#{current()} #{name()} ./chart "
+    Mix.Shell.IO.cmd("helm upgrade --install --set image.tag=#{current()} #{name()} ./chart ")
   end
 end

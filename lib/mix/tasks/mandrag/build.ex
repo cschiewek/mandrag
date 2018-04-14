@@ -4,7 +4,7 @@ defmodule Mix.Tasks.Mandrag.Build do
   @shortdoc "Builds docker image that contains a release"
 
   def run(_) do
-    docker "build -t #{current()} ."
-    docker "tag #{current()} #{latest()}"
+    docker("build -t #{current()} .")
+    docker("tag #{current()} #{latest()}")
   end
 end
