@@ -4,10 +4,10 @@ defmodule Mandrag.Mixfile do
   def project do
     [
       app: :mandrag,
-      version: "0.4.1",
-      elixir: "~> 1.5",
+      version: "0.5.0",
+      elixir: "~> 1.6",
       start_permanent: Mix.env == :prod,
-      description: "Build and Deploy Elixir releases to Kubernetes",
+      description: "Build and Deploy Elixir releases to Kubernetes via Helm",
       deps: deps(),
       package: package()
     ]

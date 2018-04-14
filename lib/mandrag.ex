@@ -9,13 +9,11 @@ defmodule Mandrag do
 
   defp repo, do: Application.get_env(:mandrag, :repo)
 
-  def kube_config, do: Application.get_env(:mandrag, :kube_config, "kubernetes.yml")
-
   def name, do: app() |> Atom.to_string
 
   def docker(args), do: Mix.Shell.IO.cmd("docker " <> args)
 
-  def kubectl(args), do: Mix.Shell.IO.cmd("kubectl " <> args)
+  def helm(args), do: Mix.Shell.IO.cmd("helm " <> args)
 
   def latest, do: "#{image()}:latest"
 

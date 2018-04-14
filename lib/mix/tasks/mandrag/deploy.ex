@@ -5,6 +5,6 @@ defmodule Mix.Tasks.Mandrag.Deploy do
   def run(_) do
     Mix.Task.run "mandrag.build"
     Mix.Task.run "mandrag.push"
-    Mix.Task.run "mandrag.update_kube"
+    Mix.Task.run "mandrag.helm"
   end
 end

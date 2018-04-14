@@ -4,7 +4,6 @@ defmodule Mix.Tasks.Mandrag.UpdateKube do
   @shortdoc "Sets the image"
 
   def run(_) do
-    if File.exists?(kube_config()), do: kubectl "apply -f #{kube_config()}"
-    kubectl "set image deployment/#{name()} #{name()}=#{current()}"
+    helm "upgrade --install --set image.tag=#{current()} #{name()} ./chart "
   end
 end
