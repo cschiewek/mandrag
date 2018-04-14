@@ -4,7 +4,7 @@ defmodule Mandrag.Mixfile do
   def project do
     [
       app: :mandrag,
-      version: "0.5.0",
+      version: "0.5.1",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       description: "Build and Deploy Elixir releases to Kubernetes via Helm",
@@ -23,7 +23,7 @@ defmodule Mandrag.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:distillery, "~> 1.5.1", runtime: false},
+      {:distillery, "~> 1.5.2", runtime: false},
       {:ecto, ">= 0.0.0", optional: true},
       {:ex_doc, "~> 0.16.3", only: :dev}
     ]

@@ -3,7 +3,7 @@
 Deploy Elixir releases to [Kubernetes](https://kubernetes.io/) via [Distilerry](https://github.com/bitwalker/distillery) and [Helm](https://helm.sh/)
 
 ## Requirements
-Mandrag expects that you have docker, kubectl and helm binaries installed and conifgured.  It also expects to you have a helm chart in the `chart` directory.
+Mandrag expects that you have docker, kubectl and helm binaries installed and configured.  It also expects to you have a helm chart in the `chart` directory.
 
 ## Installation
 
@@ -13,18 +13,21 @@ by adding `mandrag` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:mandrag, "~> 0.5.0"}
+    {:mandrag, "~> 0.5.1"}
   ]
 end
 ```
 
 ## Configure
+
+Mandrag doesn't require configuation, it'll introspect the parent mix config to derive configuration, but you can override those values as seen below.
+
 ```elixir
 config :mandrag,
-  # The name of your app.  Required.
+  # Defaults to the name of the mix project app
   app: :app_name,
-  # You can also specify a docker image, it defaults to the value speficied in :app
-  image: docker/app_name
+  # You can also specify a docker repo, it defaults to the value speficied to `docker/app_name`
+  docker_repo: docker/app_name
 ```
 
 TODO:
