@@ -21,8 +21,6 @@ RUN mix release --env=$MIX_ENV
 # Build the actual release image
 FROM bitwalker/alpine-erlang:latest
 
-# Distilerry 1.5 needs bash
-RUN apk --no-cache --update add bash
 ENV PORT=4000 MIX_ENV=prod REPLACE_OS_VARS=true SHELL=/bin/sh
 EXPOSE 4000
 ENTRYPOINT ["/opt/app/bin/${name}"]

@@ -13,7 +13,7 @@ by adding `mandrag` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:mandrag, "~> 0.5.1"}
+    {:mandrag, "~> 0.6.0"}
   ]
 end
 ```
