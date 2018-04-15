@@ -23,7 +23,7 @@ FROM bitwalker/alpine-erlang:latest
 
 ENV PORT=4000 MIX_ENV=prod REPLACE_OS_VARS=true SHELL=/bin/sh
 EXPOSE 4000
-ENTRYPOINT ["/opt/app/bin/${name}"]
-CMD ["foreground"]
+ENTRYPOINT /opt/app/bin/$name
+CMD foreground
 
 COPY --from=builder /opt/app/_build/prod/rel/${name} .
