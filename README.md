@@ -30,7 +30,7 @@ config :mandrag,
   docker_repo: docker/another_name,
   # The path to the Dockerfile to be used.  Defaults to the Dockerfile inside this package.
   dockerfile_path: Dockerfile,
-  # A map of values that are translate to `--buil-arg` arguments.
+  # A map of values that are translated to `--build-arg` arguments.
   docker_build_args: %{key: "value"}
 ```
 
