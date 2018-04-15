@@ -35,6 +35,7 @@ config :mandrag,
 ```
 
 TODO:
+- Add dockerfile export
 - Add default Helm chart for zero conifg standup.  (or mabye just create a [draft](https://draft.sh/) pack?)
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
