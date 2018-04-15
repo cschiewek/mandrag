@@ -35,7 +35,7 @@ config :mandrag,
 ```
 
 TODO:
-- Add default Dockerfile and Helm chart for zero conifg standup.  (or mabye just create a [draft](https://draft.sh/) pack?)
+- Add default Helm chart for zero conifg standup.  (or mabye just create a [draft](https://draft.sh/) pack?)
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
