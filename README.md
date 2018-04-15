@@ -13,7 +13,7 @@ by adding `mandrag` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:mandrag, "~> 0.6.3"}
+    {:mandrag, "~> 0.6.0"}
   ]
 end
 ```
@@ -29,7 +29,9 @@ config :mandrag,
   # The docker repo to push to. Defaults to `docker/app_name`.
   docker_repo: docker/another_name,
   # The path to the Dockerfile to be used.  Defaults to the Dockerfile inside this package.
-  dockerfile_path: Dockerfile
+  dockerfile_path: Dockerfile,
+  # A map of values that are translated to `--build-arg` arguments.
+  docker_build_args: %{key: "value"}
 ```
 
 TODO:

@@ -2,9 +2,13 @@ defmodule Mandrag.Docker do
   @moduledoc """
   Documentation for Mandrag.Docker
   """
-  import Mandrag, only: [name: 0]
+  import Mandrag, only: [app: 0, name: 0]
 
   def repo, do: Application.get_env(:mandrag, :image, "docker/#{name()}")
+
+  def build_args do
+    Map.merge(Application.get_env(:mandrag, :docker_build_args, %{}), %{name: app()})
+  end
 
   def file_path do
     Application.get_env(
