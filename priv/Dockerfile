@@ -2,8 +2,7 @@
 FROM bitwalker/alpine-elixir-phoenix:latest as builder
 
 ARG name=phoenix
-ENV name=${name} \
-    MIX_ENV=prod
+ENV name=${name} MIX_ENV=prod
 
 ADD . .
 
@@ -25,7 +24,7 @@ ARG name
 
 ENV name=${name} PORT=4000 MIX_ENV=prod REPLACE_OS_VARS=true SHELL=/bin/sh
 EXPOSE 4000
-ENTRYPOINT ["/opt/app/bin/$name"]
+ENTRYPOINT ["/opt/app/bin/app"]
 CMD ["foreground"]
 
-COPY --from=builder /opt/app/_build/prod/rel/$name .
+COPY --from=builder /opt/app/_build/prod/rel/$name app
