@@ -24,6 +24,6 @@ ARG name
 
 ENV name=${name} PORT=4000 MIX_ENV=prod REPLACE_OS_VARS=true SHELL=/bin/sh
 EXPOSE 4000
-CMD /opt/app/$name/bin/$name foreground
+CMD /opt/app/bin/$name foreground
 
 COPY --from=builder /opt/app/_build/prod/rel/$name .
