@@ -24,7 +24,6 @@ ARG name
 
 ENV name=${name} PORT=4000 MIX_ENV=prod REPLACE_OS_VARS=true SHELL=/bin/sh
 EXPOSE 4000
-ENTRYPOINT ["/opt/app/bin/app"]
-CMD ["foreground"]
+CMD $name/bin/$name foreground
 
-COPY --from=builder /opt/app/_build/prod/rel/$name app
+COPY --from=builder /opt/app/_build/prod/rel/$name .
