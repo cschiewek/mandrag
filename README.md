@@ -1,9 +1,9 @@
 # Mandrag
 
-Deploy Elixir releases to [Kubernetes](https://kubernetes.io/) via [Distilerry](https://github.com/bitwalker/distillery) and [Helm](https://helm.sh/)
+Zero Confing Elixir Deployments to [Kubernetes](https://kubernetes.io/) via [Distilerry](https://github.com/bitwalker/distillery) and [Helm](https://helm.sh/)
 
 ## Requirements
-Mandrag expects that you have docker, kubectl and helm binaries installed and configured.  It also expects to you have a helm chart in the `chart` directory.
+Mandrag expects that you have docker, kubectl and helm binaries installed and configured.  Currently, It also expects that you have a helm chart in the `chart` directory.
 
 ## Installation
 
@@ -34,7 +34,7 @@ config :mandrag,
   docker_build_args: %{key: "value"}
 ```
 
-TODO:
+TODO for 1.0:
 - Add dockerfile export
 - Add default Helm chart for zero conifg standup.  (or mabye just create a [draft](https://draft.sh/) pack?)
 
