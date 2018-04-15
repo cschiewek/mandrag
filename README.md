@@ -20,14 +20,18 @@ end
 
 ## Configure
 
-Mandrag doesn't require configuation, it'll introspect the parent mix config to derive configuration, but you can override those values as seen below.
+Mandrag doesn't require configuation, it'll introspect the parent mix config to derive configuration, and use it's own built-in [Dockerfile](tk), but you can override those values as seen below.
 
 ```elixir
 config :mandrag,
-  # Defaults to the name of the mix project app
+  # The name of the app and release. Defaults to the :app key in the parent mix project.
   app: :app_name,
-  # You can also specify a docker repo, it defaults to the value speficied to `docker/app_name`
-  docker_repo: docker/app_name
+  # The docker repo to push to. Defaults to `docker/app_name`.
+  docker_repo: docker/another_name,
+  # The path to the Dockerfile to be used.  Defaults to the Dockerfile inside this package.
+  dockerfile_path: Dockerfile,
+  # A map of values that are translate to `--buil-arg` arguments.
+  docker_build_args: %{key: "value"}
 ```
 
 TODO:
