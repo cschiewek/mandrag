@@ -4,7 +4,7 @@ defmodule Mandrag.Docker do
   """
   import Mandrag, only: [app: 0, name: 0]
 
-  def repo, do: Application.get_env(:mandrag, :image, "docker/#{name()}")
+  def repo, do: Application.get_env(:mandrag, :docker_repo, "docker/#{name()}")
 
   def build_args do
     Map.merge(Application.get_env(:mandrag, :docker_build_args, %{}), %{name: app()})
