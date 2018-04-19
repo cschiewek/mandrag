@@ -10,7 +10,7 @@ ADD . .
 RUN if [ -d assets ]; then \
       apk add --update --no-cache yarn && \
       mix deps.get && \
-      cd assets && yarn install && yarn build && cd .. && \
+      cd assets && yarn install && yarn deploy && cd .. && \
       mix phx.digest; \
     fi
 
