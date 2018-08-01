@@ -4,22 +4,22 @@ defmodule Mandrag.DockerTest do
 
   @current_version Mix.Project.config()[:version]
 
-  test "repo", do: assert Docker.repo() == "mandrag"
+  test "repo", do: assert(Docker.repo() == "mandrag")
 
-  test "build_args", do: assert Docker.build_args() == %{name: :mandrag}
+  test "build_args", do: assert(Docker.build_args() == %{name: :mandrag})
 
   test "file_path" do
-    path = "#{System.cwd!}/_build/test/lib/mandrag/priv/Dockerfile"
+    path = "#{System.cwd!()}/_build/test/lib/mandrag/priv/Dockerfile"
     assert Docker.file_path() == path
   end
 
-  test "tag", do: assert Docker.tag == @current_version
+  test "tag", do: assert(Docker.tag() == @current_version)
 
-  test "current", do: assert Docker.current() == "mandrag:#{@current_version}"
+  test "current", do: assert(Docker.current() == "mandrag:#{@current_version}")
 
-  test "run", do: assert Docker.run("help &> /dev/null") == 0
+  test "run", do: assert(Docker.run("help &> /dev/null") == 0)
 
-  test "latest", do: assert Docker.latest() == "mandrag:latest"
+  test "latest", do: assert(Docker.latest() == "mandrag:latest")
 
   test "export" do
     assert Docker.export() == 702

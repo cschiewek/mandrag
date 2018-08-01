@@ -6,11 +6,12 @@ defmodule Mix.Tasks.Mandrag.Docker.Export do
 
   def run(_) do
     Docker.export()
-    IO.puts """
+
+    IO.puts("""
 
     If you want to use this newly exported Dockferfile with mandrag, don't forget to set it in your config:
 
     `config :mandrag, dockerfile_path: "Dockerfile"`
-    """
+    """)
   end
 end
