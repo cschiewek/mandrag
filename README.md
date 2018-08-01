@@ -22,7 +22,7 @@ end
 
 ## Configure
 
-Mandrag doesn't require configuation, it'll introspect the parent mix config to derive configuration, and use it's own built-in [Dockerfile](tk), but you can override those values as seen below.
+Mandrag doesn't require configuation, it'll introspect the parent mix config to derive configuration, and use it's own built-in [Dockerfile](https://github.com/cschiewek/mandrag/blob/master/priv/Dockerfile), but you can override those values as seen below.
 
 ```elixir
 config :mandrag,
