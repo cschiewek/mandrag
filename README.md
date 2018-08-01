@@ -1,5 +1,7 @@
 # Mandrag
 
+[![CircleCI](https://circleci.com/gh/cschiewek/mandrag.svg?style=svg)](https://circleci.com/gh/cschiewek/mandrag)
+
 Zero Confing Elixir Deployments to [Kubernetes](https://kubernetes.io/) via [Distilerry](https://github.com/bitwalker/distillery) and [Helm](https://helm.sh/)
 
 ## Requirements
