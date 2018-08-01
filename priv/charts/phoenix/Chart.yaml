@@ -1,0 +1,8 @@
+apiVersion: v1
+appVersion: "0.1.0"
+description: A generic Helm chart for Phoenix applications.  Used by the mandrag hex package.
+name: phoenix
+version: 0.1.0
+home: https://github.com/cschiewek/mandrag
+sources:
+  - https://phoenixframework.org
