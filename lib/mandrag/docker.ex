@@ -25,4 +25,8 @@ defmodule Mandrag.Docker do
   def run(args), do: Mix.Shell.IO.cmd("docker " <> args)
 
   def latest, do: "#{repo()}:latest"
+
+  def export do
+    File.copy!(file_path(), "Dockerfile")
+  end
 end
