@@ -9,6 +9,9 @@ image:
   tag: latest
   pullPolicy: Always
 
+postgresql:
+  enabled: true
+
 service:
   type: ClusterIP
   port: 80
@@ -20,7 +23,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - chart-example.local
+    - phoenix.local
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
