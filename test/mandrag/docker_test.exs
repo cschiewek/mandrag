@@ -17,7 +17,8 @@ defmodule Mandrag.DockerTest do
 
   test "current", do: assert(Docker.current() == "mandrag:#{@current_version}")
 
-  @tag :skip # no docker in docker image
+  # no docker in docker image
+  @tag :skip
   test "run", do: assert(Docker.run("help &> /dev/null") == 0)
 
   test "latest", do: assert(Docker.latest() == "mandrag:latest")
