@@ -4,5 +4,6 @@ defmodule Mandrag.EctoTest do
 
   test "repo", do: assert(Ecto.repo() == nil)
 
+  @tag :skip
   test "migrate", do: assert(Ecto.migrate() == nil)
 end
