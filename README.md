@@ -15,7 +15,7 @@ by adding `mandrag` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:mandrag, "~> 0.6.0"}
+    {:mandrag, "~> 0.6.11"}
   ]
 end
 ```
@@ -37,7 +37,6 @@ config :mandrag,
 ```
 
 TODO for 1.0:
-- Add dockerfile export
 - Add default Helm chart for zero conifg standup.  (or mabye just create a [draft](https://draft.sh/) pack?)
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
