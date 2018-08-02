@@ -33,7 +33,9 @@ config :mandrag,
   # The path to the Dockerfile to be used.  Defaults to the Dockerfile inside this package.
   dockerfile_path: "Dockerfile",
   # A map of values that are translated to `--build-arg` arguments.
-  docker_build_args: %{key: "value"}
+  docker_build_args: %{key: "value"},
+  # The name of, or the path to, the Helm chart used to deploy.  Defaults to the chart inside this package.
+  helm_chart: './chart' # or a named chart 'stable/chart',
 ```
 
 TODO for 1.0:
