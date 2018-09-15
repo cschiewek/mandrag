@@ -36,12 +36,13 @@ config :mandrag,
   docker_build_args: %{key: "value"}
   # The kubernetes context, defaults to your current context
   k8s_context: "docker-for-desktop"
-  # Your apps ecto Repo. Defaults to `App.Repo`
-  ecto_repo: SomeOtherModule.Repo
 ```
 
 TODO for 1.0:
 - Add default Helm chart for zero conifg standup.  (or mabye just create a [draft](https://draft.sh/) pack?)
+
+TODO for 1.x:
+- Enable clustering for deploys with multiple replicas
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
