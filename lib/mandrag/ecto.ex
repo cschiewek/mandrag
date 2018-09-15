@@ -9,6 +9,8 @@ defmodule Mandrag.Ecto do
   defp default_repo do
     module = app() |> Atom.to_string |> String.capitalize
     String.to_existing_atom("#{module}.Repo")
+  rescue
+    ArgumentError -> nil
   end
 
   def migrate do
