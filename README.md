@@ -15,7 +15,7 @@ by adding `mandrag` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:mandrag, "~> 0.6.11"}
+    {:mandrag, "~> 0.7.0"}
   ]
 end
 ```
@@ -29,17 +29,20 @@ config :mandrag,
   # The name of the app and release. Defaults to the :app key in the parent mix project.
   app: :app_name,
   # The docker repo to push to. Defaults to `app_name`.
-  docker_repo: docker_user_name/app_name,
+  docker_repo: "docker_user_name/app_name",
   # The path to the Dockerfile to be used.  Defaults to the Dockerfile inside this package.
   dockerfile_path: "Dockerfile",
   # A map of values that are translated to `--build-arg` arguments.
-  docker_build_args: %{key: "value"},
-  # The name of, or the path to, the Helm chart used to deploy.  Defaults to the chart inside this package.
-  helm_chart: './chart' # or a named chart 'stable/chart',
+  docker_build_args: %{key: "value"}
+  # The kubernetes context, defaults to your current context
+  k8s_context: "docker-for-desktop"
 ```
 
 TODO for 1.0:
 - Add default Helm chart for zero conifg standup.  (or mabye just create a [draft](https://draft.sh/) pack?)
+
+TODO for 1.x:
+- Enable clustering for deploys with multiple replicas
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
