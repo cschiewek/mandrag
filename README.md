@@ -34,6 +34,8 @@ config :mandrag,
   dockerfile_path: "Dockerfile",
   # A map of values that are translated to `--build-arg` arguments.
   docker_build_args: %{key: "value"}
+  # The kubernetes context, defaults to your current context
+  k8s_context: "docker-for-desktop"
 ```
 
 TODO for 1.0:
