@@ -36,6 +36,8 @@ config :mandrag,
   docker_build_args: %{key: "value"}
   # The kubernetes context, defaults to your current context
   k8s_context: "docker-for-desktop"
+  # Your apps ecto Repo. Defaults to `App.Repo`
+  ecto_repo: SomeOtherModule.Repo
 ```
 
 TODO for 1.0:

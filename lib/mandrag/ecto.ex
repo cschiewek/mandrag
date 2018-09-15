@@ -4,7 +4,12 @@ defmodule Mandrag.Ecto do
   """
   import Mandrag, only: [app: 0]
 
-  def repo, do: Application.get_env(:mandrag, :ecto_repo)
+  def repo, do: Application.get_env(:mandrag, :ecto_repo, default_repo())
+
+  defp default_repo do
+    module = app() |> Atom.to_string |> String.capitalize
+    String.to_existing_atom("#{module}.Repo")
+  end
 
   def migrate do
     if function_exported?(Ecto.Migrator, :run, 4) do
