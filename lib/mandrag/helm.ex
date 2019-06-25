@@ -14,7 +14,7 @@ defmodule Mandrag.Helm do
   def chart do
     Application.get_env(
       :mandrag,
-      :chart,
+      :chart_path,
       Path.join(:code.priv_dir(:mandrag), "charts/phoenix")
     )
   end

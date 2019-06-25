@@ -25,7 +25,8 @@ end
 
 ## Configure
 
-Mandrag doesn't require configuation, it'll introspect the parent mix config to derive configuration, and use it's own built-in [Dockerfile](https://github.com/cschiewek/mandrag/blob/master/priv/Dockerfile), but you can override those values as seen below.
+Mandrag doesn't require configuation, it'll introspect the parent mix config to derive configuration, and use it's own built-in [Dockerfile](https://github.com/cschiewek/mandrag/blob/master/priv/Dockerfile),
+and [Helm Chart](https://github.com/cschiewek/mandrag/blob/master/priv/charts) but you can override those values as seen below.
 
 ```elixir
 config :mandrag,
@@ -36,13 +37,15 @@ config :mandrag,
   # The path to the Dockerfile to be used.  Defaults to the Dockerfile inside this package.
   dockerfile_path: "Dockerfile",
   # A map of values that are translated to `--build-arg` arguments.
-  docker_build_args: %{key: "value"}
+  docker_build_args: %{key: "value"},
   # The kubernetes context, defaults to your current context
-  k8s_context: "docker-for-desktop"
+  k8s_context: "docker-for-desktop",
+  # Path to the helm chart to use to deploy.  Defaults to the chart inside the package.
+  chart_path:  "charts/app_name"
 ```
 
 TODO for 1.0:
-- Add default Helm chart for zero conifg standup.  (or mabye just create a [draft](https://draft.sh/) pack?)
+- Add default Helm chart for zero conifg standup.
 
 TODO for 1.x:
 - Enable clustering for deploys with multiple replicas

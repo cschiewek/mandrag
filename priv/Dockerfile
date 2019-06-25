@@ -22,7 +22,7 @@ FROM bitwalker/alpine-erlang:latest
 
 ARG name
 
-ENV name=${name} PORT=4000 MIX_ENV=prod REPLACE_OS_VARS=true SHELL=/bin/sh
+ENV name=${name} PORT=4000 MIX_ENV=prod SHELL=/bin/sh
 EXPOSE 4000
 CMD /opt/app/bin/$name start
 

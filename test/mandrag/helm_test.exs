@@ -8,7 +8,7 @@ defmodule Mandrag.HelmTest do
   test "run", do: assert(Helm.run("help &> /dev/null") == 0)
 
   test "chart" do
-    path = "#{System.cwd!()}/_build/test/lib/mandrag/priv/charts/phoenix"
+    path = "#{File.cwd!()}/_build/test/lib/mandrag/priv/charts/phoenix"
     assert(Helm.chart() == path)
   end
 end
