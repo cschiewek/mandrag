@@ -7,6 +7,6 @@ defmodule Mix.Tasks.Mandrag.Helm.Upgrade do
   @shortdoc "Runs helm upgrade/install"
 
   def run(_) do
-    Helm.run("upgrade --install --set image.tag=#{tag()} #{name()} #{Helm.chart()}")
+    Helm.run("upgrade --install --namespace #{name()} --set image.tag=#{tag()} #{name()} #{Helm.chart()}")
   end
 end
