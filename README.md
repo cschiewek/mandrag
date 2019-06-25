@@ -2,10 +2,13 @@
 
 [![CircleCI](https://circleci.com/gh/cschiewek/mandrag.svg?style=svg)](https://circleci.com/gh/cschiewek/mandrag)
 
-Zero Confing Elixir Deployments to [Kubernetes](https://kubernetes.io/) via [Distilerry](https://github.com/bitwalker/distillery) and [Helm](https://helm.sh/)
+Zero Confing Elixir Deployments to [Kubernetes](https://kubernetes.io/) and [Helm](https://helm.sh/)
 
 ## Requirements
-Mandrag expects that you have docker, kubectl and helm binaries installed and configured.  Currently, It also expects that you have a helm chart in the `chart` directory.
+- Elixir 1.9 (See the older v0.7.x tags for versions that support > 1.9 via Distillery)
+- Mandrag expects that you have docker, kubectl and helm binaries installed and configured.
+- Currently, It also expects that you have a helm chart in the `chart` directory.
+
 
 ## Installation
 
@@ -15,7 +18,7 @@ by adding `mandrag` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:mandrag, "~> 0.7.0"}
+    {:mandrag, "~> 0.8.0"}
   ]
 end
 ```
