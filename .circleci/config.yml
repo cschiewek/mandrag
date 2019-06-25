@@ -5,7 +5,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: bitwalker/alpine-elixir-phoenix:latest
+      - image: cschiewek/alpine-elixir:latest
     working_directory: ~/repo
     steps:
       - checkout
