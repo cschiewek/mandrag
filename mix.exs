@@ -23,7 +23,6 @@ defmodule Mandrag.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ecto, ">= 0.0.0", optional: true},
       {:ex_doc, "~> 0.19.1", only: :dev}
     ]
   end
