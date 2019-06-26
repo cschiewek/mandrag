@@ -15,6 +15,7 @@ defmodule Mix.Tasks.Mandrag.Helm.Upgrade do
       "upgrade --install --namespace #{formatted_name} \
        --set image.repository=#{repo()} \
        --set image.tag=#{tag()} \
+       --set ingress.hosts={#{Helm.host()}} \
       #{formatted_name} #{Helm.chart()}"
     )
   end

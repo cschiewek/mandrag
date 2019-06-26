@@ -20,4 +20,13 @@ defmodule Mandrag.Helm do
   end
 
   def format_name(name), do: String.replace(name, "_", "-")
+
+  def host do
+    Mandrag.app()
+    |> Application.get_all_env
+    |> Enum.find(&(&1 |> elem(0) |> Atom.to_string =~ ~r/Endpoint/))
+    |> elem(1)
+    |> Keyword.get(:url)
+    |> Keyword.get(:host)
+  end
 end
