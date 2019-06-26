@@ -6,9 +6,8 @@ Zero Confing Elixir Deployments to [Kubernetes](https://kubernetes.io/) and [Hel
 
 ## Requirements
 - Elixir 1.9 (See the older v0.7.x tags for versions that support > 1.9 via Distillery)
-- Mandrag expects that you have docker, kubectl and helm binaries installed and configured.
+- Mandrag expects that you have docker and helm binaries installed and configured.
 - Currently, It also expects that you have a helm chart in the `chart` directory.
-
 
 ## Installation
 
@@ -45,10 +44,11 @@ config :mandrag,
 ```
 
 TODO for 1.0:
-- Add default Helm chart for zero conifg standup.
+- Add default Helm chart for zero conifg standup
 
 TODO for 1.x:
-- Enable clustering for deploys with multiple replicas
+- Enable clustering for deploys, probably via [libclsuter](https://github.com/bitwalker/libcluster)
+- Use `docker`, and `helm` clients instead of shell commands
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
