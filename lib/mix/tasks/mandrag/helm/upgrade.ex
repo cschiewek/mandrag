@@ -7,6 +7,8 @@ defmodule Mix.Tasks.Mandrag.Helm.Upgrade do
   @shortdoc "Runs helm upgrade/install"
 
   def run(_) do
-    Helm.run("upgrade --install --namespace #{name()} --set image.tag=#{tag()} #{name()} #{Helm.chart()}")
+    Helm.run("upgrade --install --namespace #{formatted_name()} --set image.tag=#{tag()} #{formatted_name()} #{Helm.chart()}")
   end
+
+  defp formatted_name, do: name() |> String.replace("_", "-")
 end
