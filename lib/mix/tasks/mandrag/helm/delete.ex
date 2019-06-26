@@ -6,6 +6,6 @@ defmodule Mix.Tasks.Mandrag.Helm.Delete do
   @shortdoc "Runs helm delete"
 
   def run(_) do
-    Helm.run("delete #{name()} --purge")
+    Helm.run("delete #{name() |> Helm.format_name()} --purge")
   end
 end

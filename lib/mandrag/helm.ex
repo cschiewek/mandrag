@@ -18,4 +18,6 @@ defmodule Mandrag.Helm do
       Path.join(:code.priv_dir(:mandrag), "charts/phoenix")
     )
   end
+
+  def format_name(name), do: String.replace(name, "_", "-")
 end
