@@ -43,8 +43,21 @@ config :mandrag,
   chart_path:  "charts/app_name"
 ```
 
+## Running
+```
+mix mandrag.deploy
+```
+
+Which is an alias for the following 3 mix tasks
+```
+mix mandrag.docker.build  # which builds your a docker image with a release of your application
+mix mandrag.docker.push   # which pushes said image to a docker image repo
+mix mandrag.helm.upgrade  # which installs or upgrades a helm release
+```
+
 TODO for 1.0:
 - Add default Helm chart for zero conifg standup
+- Including secrets and conditional config for postgresql
 
 TODO for 1.x:
 - Enable clustering for deploys, probably via [libclsuter](https://github.com/bitwalker/libcluster)
