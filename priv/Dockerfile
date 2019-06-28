@@ -1,5 +1,5 @@
 # Build intermediate image to build relase
-FROM cschiewek/alpine-elixir-phoenix:latest as builder
+FROM bitwalker/alpine-elixir-phoenix:latest as builder
 
 ARG name=phoenix
 ENV name=${name} MIX_ENV=prod

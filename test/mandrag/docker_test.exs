@@ -24,7 +24,7 @@ defmodule Mandrag.DockerTest do
   test "latest", do: assert(Docker.latest() == "mandrag:latest")
 
   test "export" do
-    assert Docker.export() == 757
+    assert Docker.export()
     assert File.exists?("Dockerfile")
     File.rm!("Dockerfile")
   end
