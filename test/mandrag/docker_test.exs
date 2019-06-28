@@ -9,7 +9,7 @@ defmodule Mandrag.DockerTest do
   test "build_args", do: assert(Docker.build_args() == %{name: :mandrag})
 
   test "file_path" do
-    path = "#{System.cwd!()}/_build/test/lib/mandrag/priv/Dockerfile"
+    path = "#{File.cwd!()}/_build/test/lib/mandrag/priv/Dockerfile"
     assert Docker.file_path() == path
   end
 
@@ -24,7 +24,7 @@ defmodule Mandrag.DockerTest do
   test "latest", do: assert(Docker.latest() == "mandrag:latest")
 
   test "export" do
-    assert Docker.export() == 682
+    assert Docker.export()
     assert File.exists?("Dockerfile")
     File.rm!("Dockerfile")
   end
