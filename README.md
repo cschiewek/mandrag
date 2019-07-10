@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/cschiewek/mandrag.svg?style=svg)](https://circleci.com/gh/cschiewek/mandrag)
 
-Zero Confing Elixir Deployments to [Kubernetes](https://kubernetes.io/) and [Helm](https://helm.sh/)
+Zero Confing Elixir Deployments to [Kubernetes](https://kubernetes.io/) via [Helm](https://helm.sh/)
 
 ## Requirements
 - Elixir 1.9 (See the older v0.7.x tags for versions that support > 1.9 via Distillery)
