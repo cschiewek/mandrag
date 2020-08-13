@@ -42,10 +42,11 @@ config :mandrag,
 ```
 
 TODO for 1.0:
-- Add default Helm chart for zero conifg standup.  (or mabye just create a [draft](https://draft.sh/) pack?)
+- Add default Helm chart for zero conifg standup.
 
 TODO for 1.x:
-- Enable clustering for deploys with multiple replicas
+- Enable clustering for deploys with multiple replicas via [libcluster](https://github.com/bitwalker/libcluster)
+- Remove dependency docker, kubectl, and helm binaries by leveraging their respective APIs
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
